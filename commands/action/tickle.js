@@ -21,7 +21,7 @@ module.exports = {
     const embed = new MessageEmbed()
     .setColor('GREY')
     .setImage(url)
-    .setFooter(`Action Commands | \©️${new Date().getFullYear()} Mai`);
+    .setFooter(`Hora! Ikuzo! | \©️${new Date().getFullYear()} Neko`);
 
     if (!message.mentions.members.size){
 
@@ -30,12 +30,12 @@ module.exports = {
     } else if (new RegExp(`<@!?${client.user.id}>`).test(args[0])){
 
       return message.channel.send(
-        embed.setDescription(`Stop ${message.member}! It tickles~`)
+        embed.setDescription(`Stop, ${message.member}!`)
       );
 
     } else if (new RegExp(`<@!?${message.author.id}>`).test(args[0])){
 
-      return message.channel.send(`<:cancel:767062250279927818> | Have fun tickling yourself ${message.author}!`);
+      return message.channel.send(`Have fun tickling yourself, ${message.author}!`);
 
     } else {
 

@@ -9,7 +9,7 @@ module.exports = {
     'ADD_REACTIONS'
   ],
   group: 'action',
-  description: 'Mazui! Kimoi!',
+  description: 'Eww!',
   examples: [ 'User Mention' ],
   parameters: [],
   run: async ( client, message, args ) => {
@@ -21,11 +21,11 @@ module.exports = {
     const embed = new MessageEmbed()
     .setColor('GREY')
     .setImage(url)
-    .setFooter(`Action Commands | \©️${new Date().getFullYear()} Mai`);
+    .setFooter(`Hora! Ikuzo! | \©️${new Date().getFullYear()} Neko`);
 
     if (!message.mentions.members.size){
 
-      return message.channel.send(embed.setDescription(`${message.member} is disgusted..`));
+      return message.channel.send(embed.setDescription(`${message.member} is disgusting..`));
 
     } else if (new RegExp(`<@!?${client.user.id}>`).test(args[0])){
 
@@ -33,12 +33,12 @@ module.exports = {
 
     } else if (new RegExp(`<@!?${message.author.id}>`).test(args[0])){
 
-      return message.channel.send(embed.setDescription(`${message.member} is disgusted..`));
+      return message.channel.send(embed.setDescription(`${message.member} is disgusting..`));
 
     } else {
 
       return message.channel.send(
-        embed.setDescription(`${args[0]} eww!`)
+        embed.setDescription(`${args[0]}, eww~!`)
       );
 
     };

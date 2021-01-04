@@ -9,7 +9,7 @@ module.exports = {
     'ADD_REACTIONS'
   ],
   group: 'action',
-  description: 'Hug someone special.',
+  description: 'Hug special people.',
   examples: [ 'hug @user' ],
   parameters: [ 'User Mention' ],
   run: async ( client, message, args ) => {
@@ -21,24 +21,24 @@ module.exports = {
     const embed = new MessageEmbed()
     .setColor('GREY')
     .setImage(url)
-    .setFooter(`Action Commands | \©️${new Date().getFullYear()} Mai`);
+    .setFooter(`Hora! Ikuzo! | \©️${new Date().getFullYear()} Neko`);
 
     if (!message.mentions.members.size){
 
-      return message.channel.send(embed.setDescription(`${message.member} H~here! Thought you needed a hug!`));
+      return message.channel.send(embed.setDescription(`${message.member} Here! Thought you needed a hug!`));
 
     } else if (new RegExp(`<@!?${client.user.id}>`).test(args[0])){
 
-      return message.channel.send(embed.setDescription(`${message.member} H~how thoughtful! Thank you! ʸᵒᵘ'ʳᵉ ⁿᵒᵗ ˢᵃᵏᵘᵗᵃ ᵗʰᵒ`));
+      return message.channel.send(embed.setDescription(`${message.member} How thoughtful! Thank you!`));
 
     } else if (new RegExp(`<@!?${message.author.id}>`).test(args[0])){
 
-      return message.channel.send(embed.setDescription(`${message.member} H~here! Thought you needed a hug!`));
+      return message.channel.send(embed.setDescription(`${message.member} Here! Thought you needed a hug!`));
 
     } else {
 
       return message.channel.send(
-        embed.setDescription(`${args[0]} was being hugged by ${message.member}!`)
+        embed.setDescription(`${args[0]} got a hug from ${message.member}!`)
       );
 
     };

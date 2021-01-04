@@ -9,7 +9,7 @@ module.exports = {
     'ADD_REACTIONS'
   ],
   group: 'action',
-  description: 'It\'s not like I want you to use my command.. ~Baka!',
+  description: 'It\'s not like I want you to use this, baka!',
   examples: [ 'pat @user' ],
   parameters: [ 'User Mention' ],
   run: async ( client, message, args ) => {
@@ -21,19 +21,19 @@ module.exports = {
     const embed = new MessageEmbed()
     .setColor('GREY')
     .setImage(url)
-    .setFooter(`Action Commands | \©️${new Date().getFullYear()} Mai`);
+    .setFooter(`Hora! Ikuzo! | \©️${new Date().getFullYear()} Neko`);
 
     if (!message.mentions.members.size){
 
-      message.channel.send(embed.setDescription(`Here you go ${message.member}, \*pat* \*pat*`));
+      message.channel.send(embed.setDescription(`Here you go ${message.member}!`));
 
     } else if (new RegExp(`<@!?${client.user.id}>`).test(args[0])){
 
-      return message.channel.send(embed.setDescription('UwU <3! Thanks!'));
+      return message.channel.send(embed.setDescription('Aw, sweet!'));
 
     } else if (new RegExp(`<@!?${message.author.id}>`).test(args[0])){
 
-      return message.channel.send(embed.setDescription(`Here you go ${message.member}, \*pat* \*pat*`));
+      return message.channel.send(embed.setDescription(`Here you go ${message.member}!`));
 
     } else {
 

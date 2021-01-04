@@ -9,7 +9,7 @@ module.exports = {
     'ADD_REACTIONS'
   ],
   group: 'action',
-  description: 'Show your love to someone special! Not me lol',
+  description: 'Show your love to someone!',
   examples: [ 'kiss @user' ],
   parameters: [ 'User Mention' ],
   run: async ( client, message, args ) => {
@@ -21,24 +21,24 @@ module.exports = {
     const embed = new MessageEmbed()
     .setColor('GREY')
     .setImage(url)
-    .setFooter(`Action Commands | \©️${new Date().getFullYear()} Mai`);
+    .setFooter(`Hora! Ikuzo! | \©️${new Date().getFullYear()} Neko`);
 
     if (!message.mentions.members.size){
 
-      return message.channel.send(`<:cancel:767062250279927818> | ${message.author}, you desperate enough to kiss an invisible user?!`);
+      return message.channel.send(`${message.author}, you desperate enough to kiss the air?!`);
 
     } else if (new RegExp(`<@!?${client.user.id}>`).test(args[0])){
 
-      return message.channel.send(embed.setDescription(`${message.member} E~ecchi!`));
+      return message.channel.send(embed.setDescription(`${message.member}!`));
 
     } else if (new RegExp(`<@!?${message.author.id}>`).test(args[0])){
 
-      return message.channel.send(`<:cancel:767062250279927818> | ${message.author}, ever heard of a mirror?`);
+      return message.channel.send(`${message.author}, ever heard of a mirror?`);
 
     } else {
 
       return message.channel.send(
-        embed.setDescription(`${message.member} just kissed ${args[0]}!`)
+        embed.setDescription(`${message.member} kissed ${args[0]}!`)
       );
 
     };

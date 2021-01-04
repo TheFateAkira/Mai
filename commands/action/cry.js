@@ -19,7 +19,7 @@ module.exports = {
       .setColor('GREY')
       .setDescription(`${message.member} started crying!`)
       .setImage(client.images.cry())
-      .setFooter(`Action Commands | \©️${new Date().getFullYear()} Mai`)
+      .setFooter(`Hora! Ikuzo! | \©️${new Date().getFullYear()} Neko`)
     );
   }
 };

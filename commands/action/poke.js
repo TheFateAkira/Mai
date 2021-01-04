@@ -21,21 +21,21 @@ module.exports = {
     const embed = new MessageEmbed()
     .setColor('GREY')
     .setImage(url)
-    .setFooter(`Action Commands | \©️${new Date().getFullYear()} Mai`);
+    .setFooter(`Hora! Ikuzo! | \©️${new Date().getFullYear()} Neko`);
 
     if (!message.mentions.members.size){
 
-      return message.channel.send(`<:cancel:767062250279927818> | ${message.author}, who am I supposed to poke?`);
+      return message.channel.send(`${message.author}, who am I supposed to poke?`);
 
     } else if (new RegExp(`<@!?${client.user.id}>`).test(args[0])){
 
       return message.channel.send(
-        embed.setDescription('I\'m already here! Need something?')
+        embed.setDescription('Need something?')
       );
 
     } else if (new RegExp(`<@!?${message.author.id}>`).test(args[0])){
 
-      return message.channel.send(`<:cancel:767062250279927818> | No!`);
+      return message.channel.send(`No!`);
 
     } else {
 

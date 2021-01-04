@@ -9,7 +9,7 @@ module.exports = {
     'ADD_REACTIONS'
   ],
   group: 'action',
-  description: 'Lick Lick Lick Lick Lick Lick Lick.',
+  description: 'Lick. Lick like a yandere.',
   examples: [ 'lick @user' ],
   parameters: [ 'User Mention' ],
   run: async ( client, message, args ) => {
@@ -22,7 +22,7 @@ module.exports = {
     const embed = new MessageEmbed()
     .setColor('GREY')
     .setImage(url)
-    .setFooter(`Action Commands | \©️${new Date().getFullYear()} Mai`);
+    .setFooter(`Hora! Ikuzo! | \©️${new Date().getFullYear()} Neko`);
 
     if (!message.mentions.members.size){
 
@@ -34,12 +34,12 @@ module.exports = {
 
     } else if (new RegExp(`<@!?${message.author.id}>`).test(args[0])){
 
-      return message.channel.send(`<:cancel:767062250279927818> | ${message.author}, ever heard of a mirror?`);
+      return message.channel.send(`${message.author}, ever heard of a mirror?`);
 
     } else {
 
       return message.channel.send(
-        embed.setDescription(`${message.member} just licked ${args[0]}!`)
+        embed.setDescription(`${message.member} licked ${args[0]}!`)
       );
 
     };

@@ -21,24 +21,24 @@ module.exports = {
     const embed = new MessageEmbed()
     .setColor('GREY')
     .setImage(url)
-    .setFooter(`Action Commands | \©️${new Date().getFullYear()} Mai`);
+    .setFooter(`Hora! Ikuzo! | \©️${new Date().getFullYear()} Neko`);
 
     if (!message.mentions.members.size){
 
-      message.channel.send(`<:cancel:767062250279927818> | ${message.author}, what's the idea slapping nothingness? At least mention a user!`);
+      message.channel.send(`${message.author}, what's the point of slapping nothing? At least, mention someone!`);
 
     } else if (new RegExp(`<@!?${client.user.id}>`).test(args[0])){
 
-      return message.channel.send([`Ouch! How dare you slap me!`,`Stop that!`,`It hurts!`][Math.floor(Math.random() * 3)]);
+      return message.channel.send([`Ouch! How dare you slap me!`,`You cruel!`,`AaaAaAaAaa!`][Math.floor(Math.random() * 3)]);
 
     } else if (new RegExp(`<@!?${message.author.id}>`).test(args[0])){
 
-      return message.channel.send(`I'd happily oblige! But i think you need a mental check-up ${message.author}!`);
+      return message.channel.send(`I think you need a mental check-up, ${message.author}!`);
 
     } else {
 
       return message.channel.send(
-        embed.setDescription(`${args[0]} has been slapped by${message.member}! That must been painful~`)
+        embed.setDescription(`${args[0]} has been slapped by ${message.member}!`)
       );
 
     };

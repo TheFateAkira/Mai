@@ -9,7 +9,7 @@ module.exports = {
     'ADD_REACTIONS'
   ],
   group: 'action',
-  description: 'It\'s not like I want you to use my command.. ~Baka!',
+  description: 'It\'s not like I want you to use my command!',
   examples: [ 'baka @user' ],
   parameters: [ 'User Mention' ],
   run: async ( client, message, args ) => {
@@ -21,7 +21,7 @@ module.exports = {
     const embed = new MessageEmbed()
     .setColor('GREY')
     .setImage(url)
-    .setFooter(`Action Commands | \©️${new Date().getFullYear()} Mai`);
+    .setFooter(`Hora! Ikuzo! | \©️${new Date().getFullYear()} Neko`);
 
     if (!message.mentions.members.size){
 
@@ -33,12 +33,12 @@ module.exports = {
 
     } else if (new RegExp(`<@!?${message.author.id}>`).test(args[0])){
 
-      return message.channel.send(`<:cancel:767062250279927818> | No ${message.author}, you're not Baka!`);
+      return message.channel.send(`:x: | No ${message.author}, you're not!`);
 
     } else {
 
       return message.channel.send(
-        embed.setDescription(`${args[0]} B~baka!`)
+        embed.setDescription(`${args[0]} Baka!`)
       );
 
     };

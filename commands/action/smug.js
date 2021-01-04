@@ -9,7 +9,7 @@ module.exports = {
     'ADD_REACTIONS'
   ],
   group: 'action',
-  description: 'The epitome of arguments: smug anime girls',
+  description: 'The epitome of arguments.',
   examples: [ 'smug' ],
   parameters: [],
   run: async ( client, message, args ) => {
@@ -19,7 +19,7 @@ module.exports = {
       .setDescription(`${message.author} smugs.`)
       .setColor('GREY')
       .setImage(client.images.smug())
-      .setFooter(`Action Commands | \©️${new Date().getFullYear()} Mai`)
+      .setFooter(`Hora! Ikuzo! | \©️${new Date().getFullYear()} Neko`)
     );
   }
 };

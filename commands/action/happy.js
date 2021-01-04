@@ -9,7 +9,7 @@ module.exports = {
     'ADD_REACTIONS'
   ],
   group: 'action',
-  description: 'Happy!',
+  description: 'Feeling high, eh?',
   examples: [ 'happy' ],
   parameters: [],
   run: async ( client, message, args ) => {
@@ -19,7 +19,7 @@ module.exports = {
       .setDescription(`${message.author} is happy.`)
       .setColor('GREY')
       .setImage(client.images.happy())
-      .setFooter(`Action Commands | \©️${new Date().getFullYear()} Mai`)
+      .setFooter(`Hora! Ikuzo! | \©️${new Date().getFullYear()} Neko`)
     );
   }
 };

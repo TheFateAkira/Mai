@@ -9,7 +9,7 @@ module.exports = {
     'ADD_REACTIONS'
   ],
   group: 'action',
-  description: 'Yummy!',
+  description: 'Yum!',
   examples: [ 'feed @user' ],
   parameters: [ 'User Mention' ],
   run: async ( client, message, args ) => {
@@ -21,7 +21,7 @@ module.exports = {
     const embed = new MessageEmbed()
     .setColor('GREY')
     .setImage(url)
-    .setFooter(`Action Commands | \©️${new Date().getFullYear()} Mai`);
+    .setFooter(`Hora! Ikuzo! | \©️${new Date().getFullYear()} Neko`);
 
     if (!message.mentions.members.size){
 
@@ -29,7 +29,7 @@ module.exports = {
 
     } else if (new RegExp(`<@!?${client.user.id}>`).test(args[0])){
 
-      return message.channel.send(embed.setDescription('*Nom Nom Nom* Arigatoo~'));
+      return message.channel.send(embed.setDescription('Thanks!'));
 
     } else if (new RegExp(`<@!?${message.author.id}>`).test(args[0])){
 
@@ -38,7 +38,7 @@ module.exports = {
     } else {
 
       return message.channel.send(
-        embed.setDescription(`${message.author} feeds ${args[0]}!`)
+        embed.setDescription(`${message.author} fed ${args[0]}!`)
       );
 
     };

@@ -65,7 +65,7 @@ module.exports = {
 
     const elapsed = Date.now() - msg.createdAt;
     const [ anime, manga ] = ['animeography', 'mangaography'].map(props => {
-      const data = res[props]?.map(x => {
+      const data = res[props].map(x => {
         const url = x.url.split('/').slice(0,5).join('/');
         return '[' + x.name + '](' + url + ') (' + x.role + ')';
       });
@@ -82,8 +82,8 @@ module.exports = {
       ...['Anime', 'Manga'].map(media => {
         const store = mediastore[media.toLowerCase()];
         return {
-          name: `${media} Appearances (${res[media.toLowerCase() + 'ography']?.length || 0})`,
-          value: `${store?.text || 'None'} ${store.excess ? `\n...and ${store.excess} more!` : ''}`
+          name: `${media} Appearances (${res[media.toLowerCase() + 'ography'].length || 0})`,
+          value: `${store.text || 'None'} ${store.excess ? `\n...and ${store.excess} more!` : ''}`
         };
       }),
       ..._.chunk(res.voice_actors ,3).slice(0,3).map((va_arr, index) => {
@@ -92,7 +92,7 @@ module.exports = {
           name: index === 0 ? `Seiyuu (${res.voice_actors.length})` : '\u200b',
           value: va_arr.map((va, i) => {
             const flag = client.anischedule.info.langflags
-            .find(m => m.lang === va.language)?.flag;
+            .find(m => m.lang === va.language).flag;
             if (index === 2 && i === 2){
               return `...and ${res.voice_actors.length - 8} more!`;
             } else {
